@@ -16,9 +16,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        email = findViewById(R.id.editTextTextEmailAddress);
-        password = findViewById(R.id.editTextTextPassword);
-
+        email = findViewById(R.id.editTextEmail);
+        password = findViewById(R.id.editTextPassword);
+        login();
 
     }
 
@@ -26,6 +26,13 @@ public class LoginActivity extends AppCompatActivity {
         Intent i = new Intent(LoginActivity.this,MainActivity.class);
         i.putExtra("email", email.getText().toString());
         i.putExtra("pass", password.getText().toString());
+        startActivity(i);
+
+    }
+    public void login() {
+        Intent i = new Intent(LoginActivity.this,MainActivity.class);
+        i.putExtra("email", "");
+        i.putExtra("pass", "");
         startActivity(i);
 
     }
